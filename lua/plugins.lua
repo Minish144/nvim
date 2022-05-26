@@ -14,7 +14,7 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Colortheme
-    use 'joshdick/onedark.vim'
+    use 'arcticicestudio/nord-vim'
     
 	-- Info bar
 	use {
@@ -38,6 +38,22 @@ return require('packer').startup(function()
     use { 
 		'kyazdani42/nvim-tree.lua',
     	requires = 'kyazdani42/nvim-web-devicons',
-    	config = function() require'nvim-tree'.setup {} 
-	end, }
+    	config = function()
+			require'nvim-tree'.setup {} 
+		end, 
+	}
+
+	-- Highlight, edit, and navigate code using a fast incremental parsing library
+    use 'nvim-treesitter/nvim-treesitter'
+    
+	-- Collection of configurations for built-in LSP client
+    use { 
+		'neovim/nvim-lspconfig',
+		config = function()
+			require'lspconfig'.gopls.setup{}
+		end,
+	}
+    
+	-- Installer for LSPs
+	use 'williamboman/nvim-lsp-installer'
 end)

@@ -1,5 +1,5 @@
--- lua modules initialization --
+-- lua modules initialization
 require('plugins')
 require('settings')
-require('keymaps')
+require('mappings')
 

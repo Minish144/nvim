@@ -39,7 +39,7 @@ return require('packer').startup(function()
 		'kyazdani42/nvim-tree.lua',
     	requires = 'kyazdani42/nvim-web-devicons',
     	config = function()
-			require'nvim-tree'.setup {} 
+			require('nvim-tree').setup {} 
 		end, 
 	}
 
@@ -50,10 +50,18 @@ return require('packer').startup(function()
     use { 
 		'neovim/nvim-lspconfig',
 		config = function()
-			require'lspconfig'.gopls.setup{}
+			require('lspconfig').gopls.setup{}
 		end,
 	}
     
 	-- Installer for LSPs
 	use 'williamboman/nvim-lsp-installer'
+
+	-- Smooth scroll
+	use { 
+		'karb94/neoscroll.nvim',
+		config = function()
+			require('neoscroll').setup()
+		end,
+	}	
 end)

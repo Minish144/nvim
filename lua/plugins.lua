@@ -167,4 +167,12 @@ return require('packer').startup(function()
             require('Comment').setup()
         end
     }
+
+     -- Keymaps popup
+    use {
+        'folke/which-key.nvim',
+        config = function()
+            require("which-key").setup()
+        end,
+    }
 end)

@@ -2,6 +2,7 @@ local cmd = vim.cmd
 local fn = vim.fn
 
 -- Main Vim settings
+vim.cmd('set termguicolors')        -- term gui colors
 vim.cmd('set colorcolumn=120')  	-- colorcolumn
 vim.cmd('set relativenumber')       -- relative numbers
 vim.cmd('set encoding=utf8')		-- encoding
@@ -25,7 +26,7 @@ cmd([[
 cmd('au BufEnter * set fo-=c fo-=r fo-=o')
 
 -- Theme
-cmd('colorscheme nord')
+cmd('colorscheme xcodedarkhc')
 
 -- Packer autoinstall 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'

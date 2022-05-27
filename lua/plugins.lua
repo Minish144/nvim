@@ -1,4 +1,3 @@
--- Cloning Packer if not installed
 return require('packer').startup(function()
 	-- Packer itself
 	use 'wbthomason/packer.nvim'
@@ -40,8 +39,12 @@ return require('packer').startup(function()
     use { 
 		'neovim/nvim-lspconfig',
 		config = function()
-			require('lspconfig').gopls.setup{}
-		end,
+			require('lspconfig').gopls.setup{
+                on_attach = function(client)
+                    require('illuminate').on_attach(client)
+                end,
+            }
+        end,
 	}
     
 	-- Installer for LSPs
@@ -53,5 +56,12 @@ return require('packer').startup(function()
 		config = function()
 			require('neoscroll').setup()
 		end,
-	}	
+	}
+
+    -- Window resizing
+    use 'camspiers/animate.vim'
+    use 'camspiers/lens.vim'
+
+    -- Highlight other uses in file of word under cursor 
+    use 'RRethy/vim-illuminate'
 end)

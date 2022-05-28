@@ -101,4 +101,10 @@ return require('packer').startup(function()
             require("configs.bufferline")
         end,
     }
+
+    -- COC
+    use {
+        'neoclide/coc.nvim',
+        branch = 'release'
+    }
 end)

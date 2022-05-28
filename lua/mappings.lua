@@ -31,6 +31,6 @@ map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation
 map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
 map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
 
--- NeoTree
+-- Neo-Tree
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
-map("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus Explorer" })
+

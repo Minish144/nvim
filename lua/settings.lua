@@ -6,7 +6,7 @@ vim.cmd('set termguicolors')        -- term gui colors
 vim.cmd('set colorcolumn=120')  	-- colorcolumn
 vim.cmd('set relativenumber')       -- relative numbers
 vim.cmd('set encoding=utf8')		-- encoding
-vim.cmd('set nu!')			        -- line numbers 
+vim.cmd('set nu!')			        -- line numbers
 vim.cmd('set mouse=a')          	-- enabling mouse
 vim.cmd('set wildmenu')         	-- commandline completion
 vim.cmd('set incsearch')        	-- incsearch
@@ -33,38 +33,15 @@ cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
 -- Theme
 cmd('colorscheme tokyonight')
 
--- Packer autoinstall 
+-- Packer autoinstall
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({
-		'git', 'clone', '--depth', '1', 
-		'https://github.com/wbthomason/packer.nvim', 
+		'git', 'clone', '--depth', '1',
+		'https://github.com/wbthomason/packer.nvim',
 		install_path
 	})
 end
 
--- LSP settings
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    if server.name == "sumneko_lua" then
-        -- only apply these settings for the "sumneko_lua" server
-        opts.settings = {
-            Lua = {
-                diagnostics = {
-                    -- Get the language server to recognize the 'vim', 'use' global
-                    globals = {'vim', 'use'},
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = vim.api.nvim_get_runtime_file("", true),
-                },
-                -- Do not send telemetry data containing a randomized but unique identifier
-                telemetry = {
-                    enable = false,
-                },
-            },
-        }
-    end
-    server:setup(opts)
-end)
+-- GUI Colors
+cmd([[ set termguicolors ]])

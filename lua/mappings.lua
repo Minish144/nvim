@@ -16,6 +16,8 @@ map("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "No Highlight" })
 map("n", "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 map("n", "<C-q>", "<cmd>q!<cr>", { desc = "Force quit" })
 map("n", "Q", "<Nop>")
+map("", "<ScrollWheelUp>", "<up>")
+map("", "<ScrollWheelDown>", "<down>")
 
 -- Stay in indent mode
 map("v", "<", "<gv", { desc = "unindent line" })
@@ -28,3 +30,7 @@ map("t", "<C-h>", "<c-\\><c-n><c-w>h", { desc = "Terminal left window navigation
 map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation" })
 map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
 map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
+
+-- NeoTree
+map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
+map("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus Explorer" })

@@ -17,6 +17,8 @@ vim.cmd('set tabstop=4')        	-- spaces on tab
 vim.cmd('set smarttab')         	-- shifwidth
 vim.cmd('set expandtab')        	-- indents on > and <
 vim.cmd('set smartindent')      	-- smart indents
+vim.cmd('set clipboard=unnamedplus')        -- system clipboard
+vim.cmd('set nowrap')               -- disable line wrapping
 
 -- Tabulation settings
 cmd([[
@@ -25,8 +27,11 @@ cmd([[
 ]])
 cmd('au BufEnter * set fo-=c fo-=r fo-=o')
 
+-- Trailing whitepsaces auto removal
+cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
+
 -- Theme
-cmd('colorscheme xcodedarkhc')
+cmd('colorscheme tokyonight')
 
 -- Packer autoinstall 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'

@@ -27,12 +27,17 @@ return require('packer').startup(function()
         },
         config = function()
             require("configs.neo-tree")
-            vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+            vim.g.neo_tree_remove_legacy_commands = 1
         end,
     }
 
     -- Highlight other uses in file of word under cursor
-    use 'rrethy/vim-illuminate'
+    use {
+        'rrethy/vim-illuminate',
+        config = function()
+            vim.g.Illuminate_highlightUnderCursor = 0
+        end,
+    }
 
     -- Speed up loading lua modules
     use {

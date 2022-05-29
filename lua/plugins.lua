@@ -112,4 +112,28 @@ return require('packer').startup(function()
         end,
     }
 
+    -- Git signs
+    use {
+        'lewis6991/gitsigns.nvim',
+        tag = 'release',
+        config = function()
+            require('gitsigns').setup()
+        end,
+    }
+
+    -- Bottom status line
+    use {
+        'feline-nvim/feline.nvim',
+        config = function()
+            require('configs.feline')
+        end,
+    }
+
+    -- Color has colorizer
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require'colorizer'.setup()
+        end,
+    }
 end)

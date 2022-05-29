@@ -4,7 +4,7 @@ require('lualine').setup {
         theme = 'ayu_mirage',
         component_separators = { left = ' ', right = ' '},
         section_separators = { left = ' ', right = ' '},
-        disabled_filetypes = { 'neo-tree', 'NvimTree', 'Outline' },
+        disabled_filetypes = { 'coc-explorer', 'neo-tree', 'NvimTree', 'Outline' },
         always_divide_middle = true,
         globalstatus = false,
     },

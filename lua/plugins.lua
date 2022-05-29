@@ -17,21 +17,6 @@ return require('packer').startup(function()
     -- UI component library
     use 'MunifTanjim/nui.nvim'
 
-    -- File Manager
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = {
-          "nvim-lua/plenary.nvim",
-          "kyazdani42/nvim-web-devicons",
-          "MunifTanjim/nui.nvim",
-        },
-        config = function()
-            require("configs.neo-tree")
-            vim.g.neo_tree_remove_legacy_commands = 1
-        end,
-    }
-
     -- Highlight other uses in file of word under cursor
     use {
         'rrethy/vim-illuminate',
@@ -119,13 +104,13 @@ return require('packer').startup(function()
     }
 
     -- Git signs
-    -- use {
-    --     'lewis6991/gitsigns.nvim',
-    --     tag = 'release',
-    --     config = function()
-    --         require('gitsigns').setup()
-    --     end,
-    -- }
+    use {
+        'lewis6991/gitsigns.nvim',
+        tag = 'release',
+        config = function()
+            require('gitsigns').setup()
+        end,
+    }
     use 'tpope/vim-fugitive'
 
     -- Bottom status line

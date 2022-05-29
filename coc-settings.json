@@ -1,0 +1,30 @@
+{
+  // json:     https://github.com/neoclide/coc-json
+  // python:   https://github.com/fannheyward/coc-pyright
+  // golang:   https://github.com/josa42/coc-go
+  // explorer: https://github.com/weirongxu/coc-explorer
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "trace.server": "verbose",
+      "filetypes": [
+        "go"
+      ]
+    },
+    "python": {
+      "command": "pyls",
+      "filetypes": [
+        "py"
+      ],
+      "settings": {}
+    }
+  },
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.source": "nvim-web-devicons"
+}

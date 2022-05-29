@@ -33,8 +33,8 @@ map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation
 map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
 map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
 
--- Neo-Tree
-map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
+-- File Explprer
+map("n", "<leader>e", "<cmd>CocCommand explorer<cr>", { desc = "Toggle Explorer" })
 
 -- COC
 map('i', '<TAB>',

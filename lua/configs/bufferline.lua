@@ -1,7 +1,8 @@
 require('bufferline').setup {
     options = {
+        mode = "buffers",
         offsets = {
-            { filetype = "NvimTree", text = "File Explorer", padding = 1 },
+            { filetype = "coc-explorer", text = "File Explorer", padding = 1 },
             { filetype = "neo-tree", text = "File Explorer", padding = 1 },
             { filetype = "Outline", text = "", padding = 1 },
         },

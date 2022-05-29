@@ -9,6 +9,7 @@ return require('packer').startup(function()
 
     -- Dev Icons
     use 'kyazdani42/nvim-web-devicons'
+    use 'ryanoasis/vim-devicons'
 
     -- Lua functions module
     use 'nvim-lua/plenary.nvim'
@@ -84,7 +85,7 @@ return require('packer').startup(function()
         end,
     }
 
-    -- Tokyo Night Theme
+    -- Theme
     use {
         'ghifarit53/tokyonight-vim',
         config = function()
@@ -118,19 +119,20 @@ return require('packer').startup(function()
     }
 
     -- Git signs
-    use {
-        'lewis6991/gitsigns.nvim',
-        tag = 'release',
-        config = function()
-            require('gitsigns').setup()
-        end,
-    }
+    -- use {
+    --     'lewis6991/gitsigns.nvim',
+    --     tag = 'release',
+    --     config = function()
+    --         require('gitsigns').setup()
+    --     end,
+    -- }
+    use 'tpope/vim-fugitive'
 
     -- Bottom status line
     use {
-        'feline-nvim/feline.nvim',
+        'nvim-lualine/lualine.nvim',
         config = function()
-            require('configs.feline')
+            require('configs.lualine')
         end,
     }
 
@@ -138,7 +140,7 @@ return require('packer').startup(function()
     use {
         'norcalli/nvim-colorizer.lua',
         config = function()
-            require'colorizer'.setup()
+            require('colorizer').setup()
         end,
     }
 end)

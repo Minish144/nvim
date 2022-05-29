@@ -33,4 +33,3 @@ map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation
 
 -- Neo-Tree
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
-

@@ -85,6 +85,7 @@ return require('packer').startup(function()
         config = function()
             vim.cmd([[ let g:tokyonight_style = 'night' ]])
             vim.cmd([[ let g:tokyonight_enable_italic = 1 ]])
+            vim.cmd('colorscheme tokyonight')
         end,
     }
 
@@ -105,6 +106,10 @@ return require('packer').startup(function()
     -- COC
     use {
         'neoclide/coc.nvim',
-        branch = 'release'
+        branch = 'release',
+        config = function()
+            require('configs.coc')
+        end,
     }
+
 end)

@@ -16,12 +16,14 @@ map("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "No Highlight" })
 map("n", "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 map("n", "<C-q>", "<cmd>q!<cr>", { desc = "Force quit" })
 map("n", "Q", "<Nop>")
+
+-- Scrolling with mouse wheel
 map("", "<ScrollWheelUp>", "<up>")
 map("", "<ScrollWheelDown>", "<down>")
 
 -- Stay in indent mode
-map("v", "<", "<gv", { desc = "unindent line" })
-map("v", ">", ">gv", { desc = "indent line" })
+map("v", "<", "<gv", { desc = "Unindent line" })
+map("v", ">", ">gv", { desc = "Indent line" })
 
 -- Improved Terminal Mappings
 map("t", "<esc>", "<C-\\><C-n>", { desc = "Terminal normal mode" })
@@ -33,3 +35,39 @@ map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation
 
 -- Neo-Tree
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
+
+-- COC
+map('i', '<TAB>',
+  function()
+    return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
+  end,
+  { expr = true, noremap = true }
+)
+map('i', '<CR>',
+  function()
+    return vim.fn.pumvisible() == 1 and "<C-y>" or "<CR>"
+  end,
+  { noremap = true, expr = true }
+)
+map('n', 'g[', '<Plug>(coc-diagnostic-prev)', { silent = true, desc = "[Coc] Diagnostics Prev" })
+map('n', 'g]', '<Plug>(coc-diagnostic-next)', { silent = true, desc = "[Coc] Diagnostics Next" })
+map('n', 'gd', '<Plug>(coc-definition)', { silent = true, desc = "[Coc] Defenition" })
+map('n', 'gy', '<Plug>(coc-type-definition)', { silent = true, desc = "[Coc] Type Defenition" })
+map('n', 'gi', '<Plug>(coc-implementation)', { silent = true, desc = "[Coc] Implementation" })
+map('n', 'gr', '<Plug>(coc-references)', { silent = true, desc = "[Coc] References" })
+map('n', 'rn', '<Plug>(coc-rename)', { silent = true, desc = "[Coc] Rename" })
+map('x','<leader>f','<Plug>(coc-format-selected)', { silent = true, desc = "[Coc] Format Selected" })
+map('n','<leader>f','<Plug>(coc-format-selected)', { silent = true, desc = "[Coc] Format Selected" })
+map('n','<leader>cd','<cmd>CocDiagnostics<cr>', { silent = true, desc = "[Coc] Diagnostics" })
+map('n','<leader>ga','<cmd>CocAction<cr>', { silent = true, desc = "[Coc] Action" })
+map('x', '<C-s>', '<Plug>(coc-range-select)', { silent = true, desc = "[Coc] Range Select" })
+map('n', '<C-s>', '<Plug>(coc-range-select)', { silent = true, desc = "[Coc] Range Select" })
+
+-- map('n', '<space>a',':<C-u>CocList diagnostics<CR>', {silent = true, nowait = true})
+-- map('n', '<space>e',':<C-u>CocList extensions<CR>', {silent = true, nowait = true})
+-- map('n', '<space>c',':<C-u>CocList commands<CR>', {silent = true, nowait = true})
+-- map('n', '<space>o',':<C-u>CocList outline<CR>', {silent = true, nowait = true})
+-- map('n', '<space>s',':<C-u>CocList -I symbols<CR>', {silent = true, nowait = true})
+-- map('n', '<space>j', ':<C-u>CocNext<CR>', {silent = true, nowait = true})
+-- map('n', '<space>k', ':<C-u>CocPrev<CR>', {silent = true, nowait = true})
+-- map('n', '<space>p', ':<C-u>CocListResume<CR> ', {silent = true, nowait = true})

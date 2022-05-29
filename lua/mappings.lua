@@ -73,6 +73,7 @@ map('n', '<C-s>', '<Plug>(coc-range-select)', { silent = true, desc = "[Coc] Ran
 -- map('n', '<space>p', ':<C-u>CocListResume<CR> ', {silent = true, nowait = true})
 
 -- FZF
-
-map('n', '<c-f>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
-
+map('n', '<leader>ff', '<cmd>Files<cr>', { silent = true, desc = "[fzf] Find Files" })
+map('n', '<leader>Rg', '<cmd>Rg<cr>', { silent = true, desc = "[fzf] Find Files" })
+map('n', '<leader>Bl', '<cmd>BLines<cr>', { silent = true, desc = "[fzf] Find Files" })
+map('n', '<leader>fb', '<cmd>Buffers<cr>', { silent = true, desc = "[fzf] Find Files" })

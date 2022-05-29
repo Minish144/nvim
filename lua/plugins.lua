@@ -130,7 +130,13 @@ return require('packer').startup(function()
     }
 
     -- Fuzzy finder
-    use { 'ibhagwan/fzf-lua',
-        requires = { 'kyazdani42/nvim-web-devicons' }
+    use 'junegunn/fzf.vim'
+    use {
+        'junegunn/fzf',
+        run = './install --bin',
+        config = function()
+            require('configs.fzf')
+        end,
     }
+
 end)

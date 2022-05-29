@@ -10,8 +10,8 @@ augroup group1
 augroup END
 ]])
 
-vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.CocSmartTab()', {expr = true, noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<C-h>"', {expr = true, noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.CocSmartTab()', {expr = true, noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<C-h>"', {expr = true, noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? "\\<C-y>" : "\\<CR>"', {expr = true, noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', {expr = true, noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'K', ':call v:lua.CocShowDocumentation()<CR>', {noremap = true, silent = true})

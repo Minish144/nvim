@@ -32,20 +32,39 @@ vim.cmd('set nowrap')               -- disable line wrapping
 vim.cmd('set signcolumn=yes')       -- signcolumn
 vim.cmd('set shortmess+=c')         -- dont pass messages to |ins-completion-menu|
 vim.cmd('set updatetime=300')       -- updatetime
-vim.cmd('set cmdheight=2')          -- more space for displaying messages
+-- vim.cmd('set cmdheight=2')       -- more space for displaying messages
 vim.cmd('set hidden')               -- textedit might fall if hidden is not set
 vim.cmd('set nobackup')             -- some lsps have troubles with backup files
-vim.cmd('set nowritebackup')         -- --//--
+vim.cmd('set nowritebackup')
+vim.cmd('set noshowmode')           -- disables mode showing
 
 -- Tabulation settings
-cmd([[
-    filetype indent plugin on
-    syntax enable
-]])
 cmd('au BufEnter * set fo-=c fo-=r fo-=o')
 
 -- Trailing whitepsaces auto removal
 cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
 
 -- GUI Colors
-cmd([[ set termguicolors ]])
+cmd('set termguicolors')
+vim.cmd('set cursorline')           -- highlighting cursorline
+-- vim.cmd('set cursorlineopt=number')
+-- vim.cmd([[
+--     autocmd ColorScheme * highlight CursorLineNr guibg=#1a1b25
+-- ]])
+vim.cmd([[
+function! s:DisableFileExplorer()
+        au! FileExplorer
+    endfunction
+
+    function! s:OpenDirHere(dir)
+        if isdirectory(a:dir)
+        exec "silent CocCommand explorer --current-buffer" . a:dir
+        endif
+    endfunction
+
+    " Taken from vim-easytree plugin, and changed to use coc-explorer
+    augroup CocExplorerDefault
+        autocmd VimEnter * call <SID>DisableFileExplorer()
+        autocmd BufEnter * call <SID>OpenDirHere(expand('<amatch>'))
+    augroup end
+]])

@@ -48,7 +48,8 @@ cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
 cmd('set termguicolors')
 vim.cmd('set cursorline')           -- highlighting cursorline
 -- vim.cmd('set cursorlineopt=number')
--- vim.cmd([[
---     autocmd ColorScheme * highlight CursorLineNr guibg=#1a1b25
--- ]])
+vim.cmd([[
+    autocmd!
+    autocmd ColorScheme * highlight CursorLineNr ctermfg=6 guifg=#81A1C1
+]])
 

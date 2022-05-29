@@ -128,4 +128,9 @@ return require('packer').startup(function()
             require('colorizer').setup()
         end,
     }
+
+    -- Fuzzy finder
+    use { 'ibhagwan/fzf-lua',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
 end)

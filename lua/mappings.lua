@@ -17,6 +17,10 @@ map("n", "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 map("n", "<C-q>", "<cmd>q!<cr>", { desc = "Force quit" })
 map("n", "Q", "<Nop>")
 
+-- Delete without saving to clipboard
+map('n', 'd', '"_d')
+map('x', 'd', '"_d')
+
 -- Scrolling with mouse wheel
 map("", "<ScrollWheelUp>", "<up>")
 map("", "<ScrollWheelDown>", "<down>")
@@ -77,3 +81,5 @@ map('n', '<leader>ff', '<cmd>Files<cr>', { silent = true, desc = "[fzf] Find Fil
 map('n', '<leader>Rg', '<cmd>Rg<cr>', { silent = true, desc = "[fzf] Find Files" })
 map('n', '<leader>Bl', '<cmd>BLines<cr>', { silent = true, desc = "[fzf] Find Files" })
 map('n', '<leader>fb', '<cmd>Buffers<cr>', { silent = true, desc = "[fzf] Find Files" })
+map('n', '<leader>fv', [[<cmd>call fzf#run({'options': '--reverse --prompt "> "', 'down': 20, 'dir': '/', 'sink': 'e' })<cr>]], { silent = true, desc = "[fzf] Find files from root" })
+

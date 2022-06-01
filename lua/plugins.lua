@@ -139,4 +139,7 @@ return require('packer').startup(function()
         end,
     }
 
+    -- Remove trailing whitespaces
+    use 'nestorsalceda/vim-strip-trailing-whitespaces'
+
 end)

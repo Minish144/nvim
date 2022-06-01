@@ -1,6 +1,14 @@
 local g = vim.g
 local fn = vim.fn
 
+g.coc_global_extensions = {
+    'coc-pyright',
+    'coc-go',
+    'coc-explorer',
+    'coc-json',
+    'coc-markdown-preview-enhanced',
+}
+
 vim.cmd([[
 augroup group1
     autocmd!

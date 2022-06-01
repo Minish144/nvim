@@ -9,5 +9,7 @@
   "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS[hidden & 1]",
   "explorer.file.root.template": "[icon & 1] PROJECT[hidden & 1] [fullpath]",
   "explorer.file.showHiddenFiles": true,
-  "explorer.file.cdCommand": "cd"
+  "explorer.file.cdCommand": "cd",
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.liveUpdate": true
 }

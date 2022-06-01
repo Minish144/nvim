@@ -6,6 +6,7 @@ g.coc_global_extensions = {
     'coc-go',
     'coc-explorer',
     'coc-json',
+    'coc-webview',
     'coc-markdown-preview-enhanced',
 }
 

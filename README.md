@@ -13,7 +13,7 @@ This repo is my neovim confuguration using Lua and made mostly for golang develo
 <h2>Installation</h2>
 <ol>
     <li>Clonse this repo to your nvim config path: <code>git clone https://github.com/Minish144/nvim.git ~/nvim</code></li>
-    <li>Open nvim and run command <code>:PackerSync` to install plugins</code></li>
+    <li>Open nvim and run command <code>:PackerSync</code> to install plugins</li>
 </ol>
 
 <h2>Plugins</h2>

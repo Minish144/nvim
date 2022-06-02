@@ -95,7 +95,7 @@ This repo is my neovim confuguration using Lua and made mostly for golang develo
         <td>Load extensions like VSCode and host language servers.</td>
     </tr>
         <tr>
-        <td><img src="https://flat.badgen.net/github/stars/lewis6991/gitsigns.nvim'?label=★&color=black"></td>
+        <td><img src="https://flat.badgen.net/github/stars/lewis6991/gitsigns.nvim?label=★&color=black"></td>
         <td><a href="https://github.com/lewis6991/gitsigns.nvim">Git Signs</a></td>
         <td>Git integration</td>
     </tr>

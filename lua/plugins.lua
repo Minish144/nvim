@@ -81,7 +81,7 @@ return require('packer').startup(function()
     }
 
     -- Trailting white red highlight
-    use 'bronson/vim-trailing-whitespace'
+    -- use 'bronson/vim-trailing-whitespace'
 
     -- Auto closing pair brackets
     use 'jiangmiao/auto-pairs'
@@ -142,4 +142,16 @@ return require('packer').startup(function()
     -- Remove trailing whitespaces
     use 'nestorsalceda/vim-strip-trailing-whitespaces'
 
+    -- File manager
+    use {
+        "Shougo/defx.nvim",
+        run = ':UpdateRemotePlugins',
+        requires = {
+            { 'kristijanhusak/defx-icons' },
+            { 'kristijanhusak/defx-git' }
+        },
+        config = function()
+            require('configs.defx')
+        end,
+    }
 end)

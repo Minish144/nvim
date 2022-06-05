@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local bufmap = vim.api.nvim_buf_set_keymap
 
 -- Leader
 vim.g.mapleader = " "
@@ -82,4 +83,49 @@ map('n', '<leader>Rg', '<cmd>Rg<cr>', { silent = true, desc = "[fzf] Find Files"
 map('n', '<leader>Bl', '<cmd>BLines<cr>', { silent = true, desc = "[fzf] Find Files" })
 map('n', '<leader>fb', '<cmd>Buffers<cr>', { silent = true, desc = "[fzf] Find Files" })
 map('n', '<leader>fv', [[<cmd>call fzf#run({'options': '--reverse --prompt "> "', 'down': 20, 'dir': '/', 'sink': 'e' })<cr>]], { silent = true, desc = "[fzf] Find files from root" })
+
+-- Defx
+map('n', '<C-e>', '<cmd>Defx -split=floating -toggle<CR> ',  { silent = true, desc = "[defx] toggle explorer" })
+
+function DefxMapping()
+    local opt = { noremap = true, silent = true, expr = true }
+
+    bufmap(0, 'n', '<cr>',  "defx#is_directory() ? defx#do_action('open_directory') : defx#do_action('multi', ['quit', 'drop'])", opt)
+    bufmap(0, 'n', 'l', [=[
+        defx#is_directory() ? defx#do_action('open_directory') : defx#do_action('multi', [['open', 'choose'], 'quit'])
+    ]=], opt)
+    bufmap(0, 'n', 'yy',    "defx#do_action('multi', ['copy', 'redraw'])", opt)
+    bufmap(0, 'n', 'yc',    "defx#do_action('multi', ['clear_clipboard', 'redraw'])", opt)
+    bufmap(0, 'n', 'mv',    "defx#do_action('move')", opt)
+    bufmap(0, 'n', 'p',     "defx#do_action('paste')", opt)
+    bufmap(0, 'n', '<c-v>', "defx#do_action('open', 'vsplit)", opt)
+    bufmap(0, 'n', '<c-h>', "defx#do_action('open', 'split)", opt)
+    bufmap(0, 'n', '<c-p>', "defx#do_action('open', 'pedit')", opt)
+    bufmap(0, 'n', 'P',     "defx#do_action('preview')", opt)
+    bufmap(0, 'n', 'o',     "defx#do_action('open_tree', 'toggle')", opt)
+    bufmap(0, 'n', 'O',     "defx#do_action('open_tree', ['toggle', 'recursive'])", opt)
+    bufmap(0, 'n', 'a',     "defx#do_action('new_file')", opt)
+    bufmap(0, 'n', 'A',     "defx#do_action('new_directory')", opt)
+    bufmap(0, 'n', 'r',     "defx#do_action('rename')", opt)
+    bufmap(0, 'n', 'yp',    "defx#do_action('yank_path')", opt)
+    bufmap(0, 'n', 'dt',    "defx#do_action('remove_trash')", opt)
+    bufmap(0, 'n', 'df',    "defx#do_action('remove')", opt)
+    bufmap(0, 'n', '<bs>',  "defx#do_action('cd', ['..'])", opt)
+    bufmap(0, 'n', '~',     "defx#do_action('cd')", opt)
+    bufmap(0, 'n', 'q',     "defx#do_action('quit')", opt)
+    bufmap(0, 'n', '<c-k>', "defx#do_action('toggle_select') . 'k'", opt)
+    bufmap(0, 'n', '<c-j>', "defx#do_action('toggle_select') . 'j'", opt)
+    bufmap(0, 'n', 'v', "defx#do_action('toggle_select')", opt)
+    bufmap(0, 'n', 'V',     "defx#do_action('toggle_select_all')", opt)
+    bufmap(0, 'n', 'j',     "line('.') == line('$') ? 'gg' : 'j'", opt)
+    bufmap(0, 'n', 'k',     "line('.') == 1 ? 'G' : 'k'", opt)
+    bufmap(0, 'n', 'H',     "defx#do_action('toggle_ignored_files')", opt)
+    bufmap(0, 'n', '<c-g>', "defx#do_action('print')", opt)
+    bufmap(0, 'n', 'R',     "defx#do_action('redraw')", opt)
+    bufmap(0, 'n', ';',     "defx#do_action('repeat')", opt)
+    bufmap(0, 'n', '!',     "defx#do_action('execute_command')", opt)
+    bufmap(0, 'n', 'cd',    "defx#do_action('change_vim_cwd')", opt)
+end
+
+vim.cmd('autocmd FileType defx call v:lua.DefxMapping()')
 

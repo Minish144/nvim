@@ -37,7 +37,7 @@ vim.cmd('set hidden')               -- textedit might fall if hidden is not set
 vim.cmd('set nobackup')             -- some lsps have troubles with backup files
 vim.cmd('set nowritebackup')
 vim.cmd('set noshowmode')           -- disables mode showing
-vim.cmd('set autochdir')            -- working directory is always the same as the file you are editing
+-- vim.cmd('set autochdir')            -- working directory is always the same as the file you are editing
 
 -- Tabulation settings
 cmd('au BufEnter * set fo-=c fo-=r fo-=o')

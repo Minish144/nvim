@@ -154,4 +154,10 @@ return require('packer').startup(function()
             require('configs.defx')
         end,
     }
+
+    -- LSP
+    use 'prabirshrestha/vim-lsp'
+
+    -- SQL lsp based plugin
+    use 'lighttiger2505/sqls.vim'
 end)

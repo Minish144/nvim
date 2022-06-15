@@ -1,7 +1,7 @@
 vim.fn['defx#custom#option']('_', {
     winwidth = 97,
     winheight = 20,
-    split= 'floating',
+    -- split= 'floating',
     show_ignored_files = 1,
     buffer_name = 'defx',
     resume = 1,
@@ -13,9 +13,9 @@ vim.fn['defx#custom#column']('indent', {
 })
 
 vim.fn['defx#custom#column']('git', 'indicators', {
-    Modified = '✹',
-    Staged = '✚',
-    Untracked = '✭',
+    Modified = 'M',
+    Staged = 'S',
+    Untracked = 'U',
     Renamed = '➜',
     Unmerged = '═',
     Ignored = '☒',

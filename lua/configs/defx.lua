@@ -5,7 +5,7 @@ vim.fn['defx#custom#option']('_', {
     show_ignored_files = 1,
     buffer_name = 'defx',
     resume = 1,
-    columns = ':git:icons: :filename:mark:size:time',
+    columns = 'indent:git:icons: :filename:mark:size:time',
 })
 
 vim.fn['defx#custom#column']('indent', {
@@ -16,10 +16,10 @@ vim.fn['defx#custom#column']('git', 'indicators', {
     Modified = 'M',
     Staged = 'S',
     Untracked = 'U',
-    Renamed = '➜',
+    Renamed = 'R',
     Unmerged = '═',
-    Ignored = '☒',
-    Deleted = '✖',
+    Ignored = 'I',
+    Deleted = 'D',
     Unknown = '?',
 })
 

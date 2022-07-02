@@ -1,11 +1,12 @@
+local g = vim.g
+
 vim.fn['defx#custom#option']('_', {
-    winwidth = 97,
+    winwidth = 95,
     winheight = 20,
-    -- split= 'floating',
+    split= 'floating',
     show_ignored_files = 1,
     buffer_name = 'defx',
     resume = 1,
-    -- columns = 'indent:git:icons:filename:mark:size:time',
     columns = 'git:indent:icons:filename:mark:size:time',
 })
 
@@ -49,15 +50,13 @@ vim.cmd([[
     augroup END
 ]])
 
-vim.cmd([[
-    let g:defx_icons_enable_syntax_highlight = v:true
-    let g:defx_icons_column_length = 2
-    let g:defx_icons_directory_icon = ''
-    let g:defx_icons_mark_icon = '﯂'
-    let g:defx_icons_parent_icon = ''
-    let g:defx_icons_root_opened_tree_icon = ''
-    let g:defx_icons_default_icon = ''
-    let g:defx_icons_directory_symlink_icon = ''
-    let g:defx_icons_nested_opened_tree_icon = ''
-    let g:defx_icons_nested_closed_tree_icon = ''
-]])
+-- defx icons settings
+g.defx_icons_enable_syntax_highlight = true
+g.defx_icons_column_length = 2
+g.defx_icons_directory_icon = ''
+g.defx_icons_mark_icon = '﯂'
+g.defx_icons_parent_icon = ''
+g.defx_icons_root_opened_tree_icon = ''
+g.defx_icons_default_icon = ''
+g.defx_icons_directory_symlink_icon = ''
+g.defx_icons_nested_opened_tree_icon = ''

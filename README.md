@@ -30,6 +30,11 @@ This repo is my neovim confuguration using Lua and made mostly for golang develo
         <td>Adds file type icons to Vim</td>
     </tr>
     <tr>
+        <td><img src="https://flat.badgen.net/github/stars/Shougo/defx.nvim?label=★&color=black"></td>
+        <td><a href="https://github.com/Shougo/defx.nvim">Defx</a></td>
+        <td>Tree explorer with floating window support</td>
+    </tr>
+    <tr>
         <td><img src="https://flat.badgen.net/github/stars/kyazdani42/nvim-web-devicons?label=★&color=black"></td>
         <td><a href="https://github.com/kyazdani42/nvim-web-devicons">Nvim Web Dev Icons</a></td>
         <td>Lua fork of vim-web-devicons for neovim</td>
@@ -130,7 +135,6 @@ This repo is my neovim confuguration using Lua and made mostly for golang develo
 <ul>
     <li><a href="https://github.com/josa42/coc-go">Go</a> - go language server extension using gopls</li>
     <li><a href="https://github.com/fannheyward/coc-pyright">Pyright</a> - python extension</li>
-    <li><a href="https://github.com/weirongxu/coc-explorer">Explorer</a> - tree explorer</li>
     <li><a href="https://github.com/neoclide/coc-json">JSON</a> - json language extension</li>
     <li><a href="https://github.com/weirongxu/coc-webview">WebView</a> - using an external browser to support the webview</li>
     <li><a href="https://github.com/weirongxu/coc-markdown-preview-enhanced">Markdown Preview Enchanced</a> - markdown live preview using coc-webview</li>

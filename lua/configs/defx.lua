@@ -4,9 +4,10 @@ vim.fn['defx#custom#option']('_', {
     winwidth = 95,
     winheight = 20,
     split= 'floating',
-    show_ignored_files = 1,
+    show_ignored_files = true,
     buffer_name = 'defx',
-    resume = 1,
+    resume = true,
+    listed = true,
     columns = 'git:indent:icons:filename:mark:size:time',
 })
 
@@ -60,3 +61,4 @@ g.defx_icons_root_opened_tree_icon = ''
 g.defx_icons_default_icon = ''
 g.defx_icons_directory_symlink_icon = ''
 g.defx_icons_nested_opened_tree_icon = ''
+g.defx_icons_nested_closed_tree_icon = ''

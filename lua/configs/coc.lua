@@ -8,6 +8,7 @@ g.coc_global_extensions = {
     'coc-json',
     'coc-webview',
     'coc-markdown-preview-enhanced',
+    'coc-vetur',
 }
 
 vim.cmd([[

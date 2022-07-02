@@ -5,11 +5,12 @@ vim.fn['defx#custom#option']('_', {
     show_ignored_files = 1,
     buffer_name = 'defx',
     resume = 1,
-    columns = 'indent:git:icons: :filename:mark:size:time',
+    -- columns = 'indent:git:icons:filename:mark:size:time',
+    columns = 'git:indent:icons:filename:mark:size:time',
 })
 
 vim.fn['defx#custom#column']('indent', {
-    indent=' ',
+    indent='  ',
 })
 
 vim.fn['defx#custom#column']('git', 'indicators', {
@@ -37,7 +38,6 @@ vim.fn['defx#custom#column']('filename', {
 vim.fn['defx#custom#column']('mark', {
     readonly_icon = '✗',
     selected_icon = '✓',
-
 })
 
 vim.cmd([[
@@ -47,4 +47,17 @@ vim.cmd([[
         autocmd FileType defx setlocal nonumber
         autocmd FileType defx setlocal norelativenumber
     augroup END
+]])
+
+vim.cmd([[
+    let g:defx_icons_enable_syntax_highlight = v:true
+    let g:defx_icons_column_length = 2
+    let g:defx_icons_directory_icon = ''
+    let g:defx_icons_mark_icon = '﯂'
+    let g:defx_icons_parent_icon = ''
+    let g:defx_icons_root_opened_tree_icon = ''
+    let g:defx_icons_default_icon = ''
+    let g:defx_icons_directory_symlink_icon = ''
+    let g:defx_icons_nested_opened_tree_icon = ''
+    let g:defx_icons_nested_closed_tree_icon = ''
 ]])

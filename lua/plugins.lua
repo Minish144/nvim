@@ -14,8 +14,9 @@ return require('packer').startup(function()
     -- Lua functions module
     use 'nvim-lua/plenary.nvim'
 
-    -- UI component library
+    -- UI component libraries
     use 'MunifTanjim/nui.nvim'
+    use 'stevearc/dressing.nvim'
 
     -- Highlight other uses in file of word under cursor
     use {
@@ -108,7 +109,7 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
         tag = 'release',
         config = function()
-            require('gitsigns').setup()
+            require('configs.gitsigns')
         end,
     }
     use 'tpope/vim-fugitive'
@@ -160,4 +161,22 @@ return require('packer').startup(function()
 
     -- SQL lsp based plugin
     use 'lighttiger2505/sqls.vim'
+
+    -- Internactive search & replace
+    use {
+        'VonHeikemen/searchbox.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' },
+        }
+    }
+
+    use {
+        'chrisbra/csv.vim',
+        config = function()
+            vim.b.csv_arrange_align   = 'l*'
+            vim.g.csv_autocmd_arrange = 1
+            vim.g.csv_autocmd_arrange_size = 1024*1024
+            vim.g.csv_strict_columns  = 1
+        end,
+    }
 end)

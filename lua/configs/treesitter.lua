@@ -11,7 +11,7 @@
         enable_autocmd = false,
     },
     autopairs = {
-        enable = true,
+        enable = false,
     },
     incremental_selection = {
         enable = true,
@@ -22,7 +22,7 @@
     rainbow = {
         enable = true,
         disable = { 'html' },
-        extended_mode = false,
+        extended_mode = true,
         max_file_lines = nil,
     },
     autotag = {

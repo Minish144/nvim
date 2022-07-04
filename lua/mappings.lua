@@ -129,3 +129,6 @@ end
 
 vim.cmd('autocmd FileType defx call v:lua.DefxMapping()')
 
+-- Searchbox
+map('n', '<leader>ss', '<cmd>SearchBoxIncSearch<cr>', {noremap = true, silent = true, desc = "[SearchBox] IncSearch"})
+map('n', '<leader>sr', '<cmd>SearchBoxReplace<cr>', {noremap = true, silent = true, desc = "[SearchBox] Replace"})

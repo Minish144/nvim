@@ -84,8 +84,8 @@ return require('packer').startup(function()
     -- Trailting white red highlight
     -- use 'bronson/vim-trailing-whitespace'
 
-    -- Auto closing pair brackets
-    use 'jiangmiao/auto-pairs'
+    -- -- Auto closing pair brackets
+    -- use 'jiangmiao/auto-pairs'
 
     -- Tabs
     use {
@@ -104,14 +104,14 @@ return require('packer').startup(function()
         end,
     }
 
-    -- Git signs
-    use {
-        'lewis6991/gitsigns.nvim',
-        tag = 'release',
-        config = function()
-            require('configs.gitsigns')
-        end,
-    }
+    -- -- Git signs
+    -- use {
+    --     'lewis6991/gitsigns.nvim',
+    --     tag = 'release',
+    --     config = function()
+    --         require('configs.gitsigns')
+    --     end,
+    -- }
     use 'tpope/vim-fugitive'
 
     -- Bottom status line
@@ -179,4 +179,13 @@ return require('packer').startup(function()
             vim.g.csv_strict_columns  = 1
         end,
     }
+
+    use {
+        'samoshkin/vim-mergetool',
+        config = function()
+            vim.g.diffget_local_map = 'gl'
+            vim.g.diffget_upstream_map = 'gu'
+        end,
+    }
 end)
+

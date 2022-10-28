@@ -8,6 +8,8 @@ g.coc_global_extensions = {
     'coc-webview',
     'coc-markdown-preview-enhanced',
     'coc-vetur',
+    'coc-tsserver',
+    'coc-pairs'
 }
 
 vim.cmd([[

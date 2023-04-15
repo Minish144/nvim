@@ -1,16 +1,32 @@
 {
-  // json:      https://github.com/neoclide/coc-json
-  // python:    https://github.com/fannheyward/coc-pyright
-  // golang:    https://github.com/josa42/coc-go
-  // explorer:  https://github.com/weirongxu/coc-explorer
-  // coc-pairs: https://github.com/neoclide/coc-pairs
-  "explorer.icon.enableNerdfont": true,
-  "explorer.icon.source": "nvim-web-devicons",
-  "explorer.width": 45,
-  "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS[hidden & 1]",
-  "explorer.file.root.template": "[icon & 1] PROJECT[hidden & 1] [fullpath]",
-  "explorer.file.showHiddenFiles": true,
-  "explorer.file.cdCommand": "cd",
-  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
-  "markdown-preview-enhanced.liveUpdate": true
+	// json:				  https://github.com/neoclide/coc-json
+	// python:			  https://github.com/fannheyward/coc-pyright
+	// golang:			  https://github.com/josa42/coc-go
+	// explorer:		  https://github.com/weirongxu/coc-explorer
+	// coc-pairs:		  https://github.com/neoclide/coc-pairs
+	// golangci-lint: https://github.com/nametake/golangci-lint-langserver
+	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
+	"markdown-preview-enhanced.liveUpdate": true,
+	"pyright.inlayHints.functionReturnTypes": false,
+	"pyright.inlayHints.variableTypes": false,
+	"python.analysis.typeCheckingMode": "off",
+	"python.linting.pylintEnabled": true,
+	"diagnostic.checkCurrentLine": true,
+	"languageserver": {
+		"golangci-lint-languageserver": {
+			"command": "golangci-lint-langserver",
+			"filetypes": [
+				"go"
+			],
+			"initializationOptions": {
+				"command": [
+					"golangci-lint",
+					"run",
+					"--out-format",
+					"json",
+					"--issues-exit-code=1"
+				]
+			}
+		}
+	}
 }

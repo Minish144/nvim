@@ -22,6 +22,7 @@
 				"command": [
 					"golangci-lint",
 					"run",
+					"--allow-parallel-runners",
 					"--out-format",
 					"json",
 					"--issues-exit-code=1"

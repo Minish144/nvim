@@ -114,6 +114,13 @@ return require('packer').startup(function()
     -- }
     use 'tpope/vim-fugitive'
 
+	use {
+        'kessejones/git-blame-line.nvim',
+        config = function()
+            require('configs.git-blame-line')
+        end,
+    }
+
     -- Bottom status line
     use {
         'nvim-lualine/lualine.nvim',

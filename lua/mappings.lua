@@ -135,3 +135,8 @@ map('n', '<leader>sr', '<cmd>SearchBoxReplace<cr>', {noremap = true, silent = tr
 
 -- COC
 vim.cmd([[inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"]])
+
+
+-- Git Blame
+map('n', '<leader>Rb', '<cmd>GitBlameLineToggle<cr>', { silent = true, desc = "[git-blame] Git Blame Line Toggle" })
+

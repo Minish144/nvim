@@ -81,6 +81,10 @@ return require('packer').startup(function()
         end,
     }
 
+	use {
+		'endel/vim-github-colorscheme',
+	}
+
     -- Trailting white red highlight
     -- use 'bronson/vim-trailing-whitespace'
 

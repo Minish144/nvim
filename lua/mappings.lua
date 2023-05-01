@@ -140,3 +140,6 @@ vim.cmd([[inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "
 -- Git Blame
 map('n', '<leader>Rb', '<cmd>GitBlameLineToggle<cr>', { silent = true, desc = "[git-blame] Git Blame Line Toggle" })
 
+-- Themes
+map('n', '<leader>td', '<cmd>colo tokyonight<cr>', { silent = true, desc = "[theme] set dark (tokyonight)" })
+map('n', '<leader>tl', '<cmd>colo morning<cr>', { silent = true, desc = "[theme] set light (morning)" })

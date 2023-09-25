@@ -9,7 +9,10 @@ g.coc_global_extensions = {
     'coc-markdown-preview-enhanced',
     'coc-vetur',
     'coc-tsserver',
-    'coc-pairs'
+    'coc-pairs',
+	'coc-yaml',
+	'coc-sh',
+	'coc-solidity'
 }
 
 vim.cmd([[

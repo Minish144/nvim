@@ -7,7 +7,8 @@
 	// golangci-lint: https://github.com/nametake/golangci-lint-langserver
 	// coc-yaml:      https://github.com/neoclide/coc-yaml
 	// coc-sh:        https://github.com/josa42/coc-sh
-	// coc-solidity:  https://github.com/qiuxiang/coc-solidity
+	// coc-solidity:  https://github.com/qiuxiang/coc-solidity // https://github.com/idrabenia/solidity-language-server && npm i solidity-language-server -g
+	// coc-tsserver:  https://github.com/neoclide/coc-tsserver
 	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
 	"markdown-preview-enhanced.liveUpdate": true,
 	"pyright.inlayHints.functionReturnTypes": false,
@@ -17,6 +18,7 @@
 	"python.pythonPath": "python3",
 	"python.venvPath": "./env/bin/python3",
 	"diagnostic.checkCurrentLine": true,
+	"coc.preferences.formatOnSave": true,
 	"languageserver": {
 		"golangci-lint-languageserver": {
 			"command": "golangci-lint-langserver",
@@ -33,6 +35,18 @@
 					"--issues-exit-code=1"
 				]
 			}
+		},
+		"solidity": {
+			"command": "solidity-language-server",
+			"args": [
+				"--stdio"
+			],
+			"rootPatterns": [
+				".git/"
+			],
+			"filetypes": [
+				"solidity"
+			]
 		}
 	}
 }

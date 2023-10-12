@@ -12,7 +12,6 @@ g.coc_global_extensions = {
     'coc-pairs',
 	'coc-yaml',
 	'coc-sh',
-	'coc-solidity',
 	'coc-tsserver'
 }
 

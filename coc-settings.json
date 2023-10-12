@@ -7,7 +7,6 @@
 	// golangci-lint: https://github.com/nametake/golangci-lint-langserver
 	// coc-yaml:      https://github.com/neoclide/coc-yaml
 	// coc-sh:        https://github.com/josa42/coc-sh
-	// coc-solidity:  https://github.com/qiuxiang/coc-solidity // https://github.com/idrabenia/solidity-language-server && npm i solidity-language-server -g
 	// coc-tsserver:  https://github.com/neoclide/coc-tsserver
 	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
 	"markdown-preview-enhanced.liveUpdate": true,
@@ -37,10 +36,11 @@
 			}
 		},
 		"solidity": {
-			"command": "solidity-language-server",
+			"command": "solc",
 			"args": [
-				"--stdio"
+				"--lsp"
 			],
+			"trace.server": "verbose",
 			"rootPatterns": [
 				".git/"
 			],

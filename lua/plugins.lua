@@ -198,7 +198,5 @@ return require('packer').startup(function()
             vim.g.diffget_upstream_map = 'gu'
         end,
     }
-
-	use 'tomlion/vim-solidity'
 end)
 

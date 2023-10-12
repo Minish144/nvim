@@ -12,7 +12,8 @@ g.coc_global_extensions = {
     'coc-pairs',
 	'coc-yaml',
 	'coc-sh',
-	'coc-tsserver'
+	'coc-tsserver',
+	'coc-solidity'
 }
 
 vim.cmd([[
@@ -73,5 +74,4 @@ function CocShowDocumentation()
     vim.cmd('!' .. vim.o.keywordprg .. ' ' .. fn.expand('<cword>'))
   end
 end
-
 

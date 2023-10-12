@@ -198,5 +198,12 @@ return require('packer').startup(function()
             vim.g.diffget_upstream_map = 'gu'
         end,
     }
+
+	use {
+  		'gelguy/wilder.nvim',
+  		config = function()
+    		require('configs.wilder')
+  		end,
+	}
 end)
 

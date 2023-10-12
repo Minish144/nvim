@@ -12,7 +12,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Main Vim settings
-vim.cmd('set termguicolors')        -- term gui colors
 vim.cmd('set colorcolumn=139')  	-- colorcolumn
 vim.cmd('set relativenumber')       -- relative numbers
 vim.cmd('set encoding=utf8')		-- encoding
@@ -55,4 +54,5 @@ vim.cmd([[
     autocmd!
     autocmd ColorScheme * highlight CursorLineNr ctermfg=6 guifg=#81A1C1
 ]])
+
 

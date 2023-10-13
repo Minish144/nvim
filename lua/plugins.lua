@@ -205,5 +205,7 @@ return require('packer').startup(function()
     		require('configs.wilder')
   		end,
 	}
+
+	use 'github/copilot.vim'
 end)
 

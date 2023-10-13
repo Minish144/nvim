@@ -210,6 +210,7 @@ return require('packer').startup(function()
 		'github/copilot.vim',
 		config = function()
 			require('configs.copilot')
+			require('configs.copilot_proxy')
 		end,
 	}
 end)

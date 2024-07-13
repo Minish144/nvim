@@ -1,5 +1,2 @@
--- lua modules initialization
-require('settings')
-require('plugins')
-require('mappings')
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

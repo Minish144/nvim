@@ -3,6 +3,15 @@
 -- Add any additional options here
 
 local g = vim.g
+local o = vim.opt
+
+-- Themes
+o.termguicolors = true
+o.listchars = {
+  tab = "> ",
+  trail = " ",
+  nbsp = "+",
+}
 
 -- Leader
 g.mapleader = " "

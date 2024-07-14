@@ -5,6 +5,39 @@
 local g = vim.g
 local o = vim.opt
 
+-- General
+g.mapleader = " "
+
+o.encoding = "utf-8"
+o.fileencoding = "utf-8"
+
+o.number = true
+
+o.title = true
+o.autoindent = true
+o.smartindent = true
+o.hlsearch = true
+o.backup = false
+o.showcmd = true
+o.cmdheight = 1
+o.laststatus = 3
+o.expandtab = true
+o.shell = "zsh"
+o.backupskip = { "/tmp/*", "/private/tmp/*" }
+o.inccommand = "split"
+o.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
+o.smarttab = true
+o.breakindent = true
+o.shiftwidth = 2
+o.tabstop = 2
+o.wrap = false -- No Wrap lines
+o.backspace = { "start", "eol", "indent" }
+o.path:append({ "**" }) -- Finding files - Search down into subfolders
+o.wildignore:append({ "*/node_modules/*" })
+o.splitbelow = true -- Put new windows below current
+o.splitright = true -- Put new windows right of current
+o.splitkeep = "cursor"
+
 -- Themes
 o.termguicolors = true
 o.listchars = {

@@ -5,9 +5,6 @@
 local map = vim.keymap.set
 local bufmap = vim.api.nvim_buf_set_keymap
 
--- Leader
-vim.g.mapleader = " "
-
 -- Disabling arrows keys
 -- map('', '<up>', ':echoe "Use k"<CR>', {noremap = true, silent = false})
 -- map('', '<down>', ':echoe "Use j"<CR>', {noremap = true, silent = false})

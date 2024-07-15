@@ -4,8 +4,8 @@ return {
     event = "LazyFile",
     opts = {
       indent = {
-        char = "│",
-        tab_char = "│",
+        char = "▏",
+        tab_char = "▏",
       },
       scope = { show_start = true, show_end = true },
       exclude = {

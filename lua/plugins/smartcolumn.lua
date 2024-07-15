@@ -2,7 +2,7 @@ return {
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
-      custom_colorcolumn = "135",
+      colorcolumn = "130",
       disabled_filetypes = {
         "defx",
         "netrw",

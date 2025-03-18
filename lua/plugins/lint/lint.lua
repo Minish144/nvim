@@ -1,16 +1,14 @@
 return {
 	{
 		"mfussenegger/nvim-lint",
-		event = { "BufReadPost", "BufNewFile" }, -- Линтер загружается лениво при открытии файла
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
 
-			-- Настройка линтера golangci-lint для Go
 			lint.linters_by_ft = {
 				go = { "golangci_lint" },
 			}
 
-			-- Настраиваем golangci-lint
 			lint.linters.golangci_lint = {
 				cmd = "golangci-lint",
 				args = { "run", "--out-format", "line-number", "%filepath" },
@@ -31,17 +29,15 @@ return {
 				),
 			}
 
-			-- Таймер для дебаунса линтинга
+			-- Debounce lint timer
 			local lint_timer = vim.loop.new_timer()
 
-			-- Автолинтинг с дебаунсом
 			vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
 				callback = function()
-					-- Сбрасываем таймер при каждом изменении
 					lint_timer:stop()
 					lint_timer:start(
-						100, -- Время задержки в миллисекундах
-						0, -- Выполнить один раз после задержки
+						100,
+						0,
 						vim.schedule_wrap(function()
 							lint.try_lint()
 						end)
@@ -49,7 +45,7 @@ return {
 				end,
 			})
 
-			-- Также линтим при сохранении файла
+			-- Autolint on save
 			vim.api.nvim_create_autocmd("BufWritePost", {
 				callback = function()
 					lint.try_lint()

@@ -2,6 +2,7 @@ local g = vim.g
 local o = vim.opt
 
 -- General
+o.smoothscroll = true
 g.mapleader = " "
 o.fillchars = "eob: "
 o.undofile = true
@@ -79,10 +80,10 @@ vim.diagnostic.config({
 })
 
 local signs = {
-	{ name = "DiagnosticSignError", text = "" }, -- Красный крест (указание на критическую ошибку)
-	{ name = "DiagnosticSignWarn", text = "" }, -- Желтый треугольник с восклицательным знаком
-	{ name = "DiagnosticSignHint", text = "" }, -- Лампочка (подсказка)
-	{ name = "DiagnosticSignInfo", text = "" }, -- Информационная иконка (синий кружок с буквой)
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do

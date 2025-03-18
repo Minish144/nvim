@@ -41,7 +41,12 @@ map("v", "<", "<gv", { desc = "Unindent line" })
 map("v", ">", ">gv", { desc = "Indent line" })
 
 -- Defx
-map("n", "<C-e>", "<cmd>Defx -split=floating -toggle<CR> ", { silent = true, desc = "[defx] toggle explorer" })
+map(
+	"n",
+	"<C-e>",
+	"<cmd>Defx -split=floating -toggle<CR> ",
+	{ silent = true, desc = "[defx] toggle explorer", nowait = true }
+)
 
 function DefxMapping()
 	local opt = { noremap = true, silent = true, expr = true }
@@ -128,10 +133,10 @@ map("n", "<C-w>", function()
 			once = true,
 		})
 	end
-end, { desc = "Buffers" })
+end, { desc = "Buffers", nowait = true })
 
 -- Git Blame
-map("n", "<leader>Rb", "<cmd>GitBlameLineToggle<cr>", { silent = true, desc = "Git Blame Line" })
+map("n", "<leader>Rb", "<cmd>GitBlameLineToggle<cr>", { silent = true, desc = "Git Blame Line", nowait = true })
 
 -- Diagnostics
 map("n", "[w", function()

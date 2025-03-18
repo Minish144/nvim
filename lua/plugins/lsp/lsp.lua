@@ -40,6 +40,10 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"gopls", -- Добавлено для поддержки Go
+				"tsserver",
+				"eslint",
+				"html",
+				"cssls",
 			},
 			automatic_installation = true,
 		},

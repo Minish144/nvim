@@ -40,12 +40,12 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"gopls", -- Добавлено для поддержки Go
-				"tsserver",
 				"eslint",
 				"html",
 				"cssls",
 			},
 			automatic_installation = true,
+			automatic_enable = false,
 		},
 	},
 	{
@@ -72,28 +72,22 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-			mason_lspconfig.setup_handlers({
-				function(server_name)
-					-- Default setup for all servers
-					lspconfig[server_name].setup({
+			for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+				if server ~= "gopls" then
+					lspconfig[server].setup({
 						capabilities = capabilities,
 					})
-				end,
+				end
+			end
 
-				-- Override settings for gopls
-				["gopls"] = function()
-					lspconfig.gopls.setup({
-						capabilities = capabilities,
-						settings = {
-							gopls = {
-								analyses = {
-									unusedparams = true, -- Enable analysis for unused parameters
-								},
-								staticcheck = true, -- Enable staticcheck for better analysis
-							},
-						},
-					})
-				end,
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						analyses = { unusedparams = true },
+						staticcheck = true,
+					},
+				},
 			})
 		end,
 	},

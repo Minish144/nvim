@@ -34,7 +34,7 @@ nvim/
 > ![screenshot-telescope](.github/screenshots/screenshot-telescope.png)
 
 > 🧠 **LSP and autocompletion**  
-> <img src=".github/screenshots/screenshot-lsp.png" alt="screenshot-lsp" width="200px"/>
+> <img src=".github/screenshots/screenshot-lsp.png" alt="screenshot-lsp" width="400px"/>
 
 ## ⚙️ Installation
 

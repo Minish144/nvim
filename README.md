@@ -31,10 +31,10 @@ nvim/
 > ![screenshot-main](.github/screenshots/screenshot-main.png)
 
 > 🔍 **File search with Telescope**  
-> ![screenshot-telescope](screenshots/screenshot-telescope.png)
+> ![screenshot-telescope](.github/screenshots/screenshot-telescope.png)
 
 > 🧠 **LSP and autocompletion**  
-> ![screenshot-lsp](screenshots/screenshot-lsp.png)
+> ![screenshot-lsp](.github/screenshots/screenshot-lsp.png)
 
 ## ⚙️ Installation
 

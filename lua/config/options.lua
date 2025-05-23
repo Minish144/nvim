@@ -80,12 +80,20 @@ vim.diagnostic.config({
 })
 
 local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
+	{ name = "DiagnosticSignError", text = "", color = "#db4b4b" },
+	{ name = "DiagnosticSignWarn", text = "", color = "#e0af68" },
+	{ name = "DiagnosticSignHint", text = "", color = "#9d7cd8" },
+	{ name = "DiagnosticSignInfo", text = "", color = "#7dcfff" },
 }
 
 for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	-- Set highlight group (optional, if your theme already defines it)
+	vim.api.nvim_set_hl(0, sign.name, { fg = sign.color, bg = "NONE" })
+
+	-- Определяем знак с использованием Lua API
+	vim.fn.sign_define(sign.name, {
+		text = sign.text,
+		texthl = sign.name,
+		numhl = "", -- or sign.name, if you need numbers highlighting
+	})
 end

@@ -3,9 +3,15 @@ local bufmap = vim.api.nvim_buf_set_keymap
 
 -- Telescope
 map("n", "gd", function()
-	require("telescope.builtin").lsp_definitions({ reuse_win = true })
+	vim.lsp.buf.definition({ reuse_win = true })
 end, { desc = "Goto Definition" })
-map("n", "gr", "<cmd>Telescope lsp_references<cr>", { desc = "References", nowait = true })
+map("n", "gr", function()
+	require("telescope.builtin").lsp_references({
+		reuse_win = true,
+		show_line = false,
+		sorting_strategy = "ascending",
+	})
+end, { desc = "References", nowait = true })
 map("n", "gI", function()
 	require("telescope.builtin").lsp_implementations({ reuse_win = true })
 end, { desc = "Goto Implementation" })
@@ -13,7 +19,13 @@ map("n", "gy", function()
 	require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
 end, { desc = "Goto Type Definition" })
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
-map("n", "<leader>/", "<Cmd>Telescope live_grep<CR>", { desc = "Grep (root dir)" })
+map("n", "<leader>/", function()
+	require("telescope.builtin").live_grep({
+		cwd = vim.fn.getcwd(),
+		prompt_title = "Grep in Root Directory",
+		sorting_strategy = "ascending",
+	})
+end, { desc = "Grep (root dir)" })
 
 -- LSP
 map("n", "K", function()

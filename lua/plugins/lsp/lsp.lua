@@ -57,13 +57,6 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		cmd = { "LSPInfo", "LspInstall", "LspUninstall" },
 		config = function()
-			local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
-
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-			end
-
 			-- Setup LSP servers
 			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")

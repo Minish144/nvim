@@ -79,21 +79,27 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
-local signs = {
-	{ name = "DiagnosticSignError", text = "", color = "#db4b4b" },
-	{ name = "DiagnosticSignWarn", text = "", color = "#e0af68" },
-	{ name = "DiagnosticSignHint", text = "", color = "#9d7cd8" },
-	{ name = "DiagnosticSignInfo", text = "", color = "#7dcfff" },
-}
-
-for _, sign in ipairs(signs) do
-	-- Set highlight group (optional, if your theme already defines it)
-	vim.api.nvim_set_hl(0, sign.name, { fg = sign.color, bg = "NONE" })
-
-	-- Определяем знак с использованием Lua API
-	vim.fn.sign_define(sign.name, {
-		text = sign.text,
-		texthl = sign.name,
-		numhl = "", -- or sign.name, if you need numbers highlighting
-	})
-end
+-- Configure diagnostic signs using vim.diagnostic.config
+vim.diagnostic.config({
+	signs = {
+		-- Define icons for each diagnostic severity level
+		text = {
+			[vim.diagnostic.severity.ERROR] = "", -- Error icon
+			[vim.diagnostic.severity.WARN] = "", -- Warning icon
+			[vim.diagnostic.severity.INFO] = "", -- Info icon
+			[vim.diagnostic.severity.HINT] = "󰌵", -- Hint icon
+		},
+		-- Optional: configure line number highlighting
+		-- numhl = {
+		--   [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+		--   [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+		--   [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+		--   [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+		-- },
+	},
+	-- Additional options (optional)
+	-- virtual_text = false,  -- Disable virtual text
+	-- underline = true,      -- Enable underlining
+	-- update_in_insert = false,  -- Disable updates in insert mode
+	-- severity_sort = true,      -- Sort diagnostics by severity
+})

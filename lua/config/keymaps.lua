@@ -3,7 +3,11 @@ local bufmap = vim.api.nvim_buf_set_keymap
 
 -- Telescope
 map("n", "gd", function()
-	vim.lsp.buf.definition({ reuse_win = true })
+	require("telescope.builtin").lsp_definitions({
+		reuse_win = true,
+		show_line = false,
+		sorting_strategy = "ascending",
+	})
 end, { desc = "Goto Definition" })
 map("n", "gr", function()
 	require("telescope.builtin").lsp_references({
@@ -38,6 +42,10 @@ map({ "n", "v" }, "<leader>cc", vim.lsp.codelens.run, { desc = "Run Codelens" })
 map("n", "<leader>cC", vim.lsp.codelens.refresh, { desc = "Refresh & Display Codelens" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+
+-- Gopher
+map("n", "<leader>gtj", ":GoTagAdd json<CR>", { desc = "Generate Go JSON tags", silent = true })
+map("n", "<leader>gie", ":GoIfErr<CR>", { desc = "Generate Go iferr", silent = true })
 
 -- Clipboard
 map("v", "p", "P")

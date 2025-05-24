@@ -16,13 +16,16 @@ map("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
 map("n", "<leader>/", "<Cmd>Telescope live_grep<CR>", { desc = "Grep (root dir)" })
 
 -- LSP
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+map("n", "K", function()
+	vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "LSP Hover with Rounded Border" })
 map("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 -- map("i", "<c-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 map({ "n", "v" }, "<leader>cc", vim.lsp.codelens.run, { desc = "Run Codelens" })
 map("n", "<leader>cC", vim.lsp.codelens.refresh, { desc = "Refresh & Display Codelens" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 
 -- Clipboard
 map("v", "p", "P")
@@ -140,17 +143,17 @@ map("n", "<leader>Rb", "<cmd>GitBlameLineToggle<cr>", { silent = true, desc = "G
 
 -- Diagnostics
 map("n", "[w", function()
-	vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN, float = false })
+	vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN, float = false })
 end, { desc = "Go to previous warning" })
 
 map("n", "]w", function()
-	vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN, float = false })
+	vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.WARN, float = false })
 end, { desc = "Go to next warning" })
 
 map("n", "[e", function()
-	vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
+	vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR, float = false })
 end, { desc = "Go to previous error" })
 
 map("n", "]e", function()
-	vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = false })
+	vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR, float = false })
 end, { desc = "Go to next error" })

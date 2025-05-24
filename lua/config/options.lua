@@ -64,8 +64,13 @@ g.defx_icons_nested_closed_tree_icon = ""
 -- Diagnostics
 vim.diagnostic.config({
 	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+	},
 	virtual_text = {
-		prefix = "",
+		prefix = "",
 		format = function(diagnostic)
 			if diagnostic.severity == vim.diagnostic.severity.WARN then
 				return string.format("(%s) %s", diagnostic.source, diagnostic.message)
@@ -74,32 +79,20 @@ vim.diagnostic.config({
 			end
 		end,
 	},
-	signs = true,
-	underline = true,
-	severity_sort = true,
-})
-
--- Configure diagnostic signs using vim.diagnostic.config
-vim.diagnostic.config({
 	signs = {
-		-- Define icons for each diagnostic severity level
 		text = {
 			[vim.diagnostic.severity.ERROR] = "", -- Error icon
 			[vim.diagnostic.severity.WARN] = "", -- Warning icon
 			[vim.diagnostic.severity.INFO] = "", -- Info icon
 			[vim.diagnostic.severity.HINT] = "󰌵", -- Hint icon
 		},
-		-- Optional: configure line number highlighting
-		-- numhl = {
-		--   [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-		--   [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
-		--   [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
-		--   [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
-		-- },
+		numhl = {
+			[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+			[vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+			[vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+			[vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+		},
 	},
-	-- Additional options (optional)
-	-- virtual_text = false,  -- Disable virtual text
-	-- underline = true,      -- Enable underlining
-	-- update_in_insert = false,  -- Disable updates in insert mode
-	-- severity_sort = true,      -- Sort diagnostics by severity
 })
+
+vim.diagnostic.setqflist()

@@ -10,10 +10,10 @@ return {
 			require("noice").setup({
 				lsp = {
 					progress = {
-						enabled = false, -- Отключаем прогресс от LSP
+						enabled = false, -- Disable LSP progress messages
 					},
 					override = {
-						-- Отключаем все уведомления от LSP (включая ошибки и предупреждения)
+						-- Disable all LSP notifications (including errors and warnings)
 						["vim.lsp.util.show_line_diagnostics"] = false,
 						["vim.lsp.util.show_message"] = false,
 						["vim.lsp.handlers.show_message"] = false,
@@ -25,7 +25,7 @@ return {
 								style = "rounded", -- Rounded corners for the hover window
 							},
 							win_options = {
-								winblend = 0, -- Transparency for a better visual effect
+								winblend = 0, -- Transparency for better visual effect
 							},
 						},
 					},
@@ -44,7 +44,7 @@ return {
 				},
 				presets = {
 					bottom_search = true, -- Use a classic bottom search bar
-					command_palette = true, -- Position command palette at the bottom
+					command_palette = true, -- Place command palette at the bottom
 					long_message_to_split = true, -- Long messages will be split into a separate window
 				},
 			})

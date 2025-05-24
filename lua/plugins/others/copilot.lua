@@ -13,7 +13,6 @@ return {
 			file:close()
 		end
 
-		-- Можно включить Copilot сразу
 		vim.cmd("Copilot enable")
 	end,
 }

@@ -39,10 +39,10 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
-				"gopls", -- Добавлено для поддержки Go
-				"eslint",
-				"html",
-				"cssls",
+				"gopls",
+				-- "eslint",
+				-- "html",
+				-- "cssls",
 			},
 			automatic_installation = true,
 			automatic_enable = false,
@@ -77,7 +77,9 @@ return {
 				capabilities = capabilities,
 				settings = {
 					gopls = {
-						analyses = { unusedparams = true },
+						analyses = {
+							unusedparams = true,
+						},
 						staticcheck = true,
 					},
 				},

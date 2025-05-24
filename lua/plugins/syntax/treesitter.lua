@@ -22,19 +22,6 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	-- {
-	-- 	"p00f/nvim-ts-rainbow",
-	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	-- 	config = function()
-	-- 		---@diagnostic disable-next-line: missing-fields
-	-- 		require("nvim-treesitter.configs").setup({
-	-- 			rainbow = {
-	-- 				enable = true,
-	-- 				extended_mode = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",

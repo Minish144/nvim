@@ -8,6 +8,10 @@ return {
 				"lua-language-server",
 				"gopls",
 				"stylua",
+				"shellcheck",
+				"tailwindcss-language-server",
+				"typescript-language-server",
+				"css-lsp",
 			},
 		},
 		config = function(_, opts)
@@ -37,14 +41,7 @@ return {
 			require("mason-lspconfig").setup(opts)
 		end,
 		opts = {
-			ensure_installed = {
-				"lua_ls",
-				"gopls",
-				-- "eslint",
-				-- "html",
-				-- "cssls",
-			},
-			automatic_installation = true,
+			automatic_installation = false,
 			automatic_enable = false,
 		},
 	},

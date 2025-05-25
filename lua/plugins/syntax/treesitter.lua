@@ -1,15 +1,17 @@
+local ensure_installed = {
+	"lua",
+	"go",
+	"json",
+	"bash",
+}
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
-			ensure_installed = {
-				"lua",
-				"go",
-				"json",
-				"bash",
-			},
+			ensure_installed = ensure_installed,
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
@@ -20,7 +22,7 @@ return {
 		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "go" },
+				ensure_installed = ensure_installed,
 				highlight = {
 					enable = true,
 				},

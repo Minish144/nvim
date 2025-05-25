@@ -32,7 +32,7 @@ return {
 				},
 				iferr = {
 					-- choose a custom error message
-					message = fmt.Errorf("failed to %w", err),
+					message = 'fmt.Errorf("failed to %w", err)',
 				},
 			})
 		end,

@@ -188,9 +188,9 @@ map(
 )
 
 -- Dial
-map({ "n", "v" }, "<C-]>", function()
-	return require("dial.map").inc_normal()
-end, { expr = true, desc = "Increment" })
-map({ "n", "v" }, "<C-[>", function()
-	return require("dial.map").dec_normal()
-end, { expr = true, desc = "Decrement" })
+-- map({ "n", "v" }, "<C-]>", function()
+-- 	return require("dial.map").inc_normal()
+-- end, { expr = true, desc = "Increment" })
+-- map({ "n", "v" }, "<C-[>", function()
+-- 	return require("dial.map").dec_normal()
+-- end, { expr = true, desc = "Decrement" })

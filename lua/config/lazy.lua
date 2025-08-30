@@ -28,13 +28,14 @@ require("lazy").setup({
 		change_detection = {
 			notify = false,
 		},
-		{ import = "plugins.ui" },
 		{ import = "plugins.others" },
+		{ import = "plugins.ui" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.editor" },
 		{ import = "plugins.syntax" },
 		{ import = "plugins.formatting" },
 		{ import = "plugins.lint" },
+		{ import = "plugins.ai" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.

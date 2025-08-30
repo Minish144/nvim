@@ -178,14 +178,14 @@ map("n", "]e", function()
 	vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR, float = false })
 end, { desc = "Go to next error" })
 
--- Copilot
-vim.g.copilot_no_tab_map = true
-map(
-	{ "i", "n" },
-	"<C-CR>",
-	'copilot#Accept("\\<CR>")',
-	{ silent = true, expr = true, replace_keycodes = false, desc = "Accept Copilot suggestion" }
-)
+-- -- Copilot
+-- vim.g.copilot_no_tab_map = true
+-- map(
+-- 	{ "i", "n" },
+-- 	"<C-CR>",
+-- 	'copilot#Accept("\\<CR>")',
+-- 	{ silent = true, expr = true, replace_keycodes = false, desc = "Accept Copilot suggestion" }
+-- )
 
 -- Dial
 -- map({ "n", "v" }, "<C-]>", function()

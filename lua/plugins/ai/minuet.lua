@@ -12,10 +12,12 @@ return {
 
 			require("minuet").setup({
 				provider = "openai_compatible",
-				notify = "verbose", -- see more notifications
+				-- notify = "verbose", -- see more notifications
 				request_timeout = 15, -- use 2 seconds for faster retrieval
 				n_completions = 1,
-				context_window = 2048,
+				context_window = 512,
+				throttle = 1500, -- Increase to reduce costs and avoid rate limits
+				debounce = 100, -- Increase to reduce costs and avoid rate limits
 				provider_options = {
 					openai_compatible = {
 						end_point = URL .. "/v1/chat/completions",
@@ -26,7 +28,7 @@ return {
 						model = AUTOCOMPLETE_MODEL,
 						name = "Personal",
 						optional = {
-							max_tokens = 4096,
+							max_tokens = 512,
 						},
 					},
 				},

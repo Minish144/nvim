@@ -51,6 +51,26 @@ return {
 					},
 					chat = {
 						start_in_insert_mode = true,
+						window = {
+							layout = "vertical", -- float|vertical|horizontal|buffer
+							position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+							border = "single",
+							height = 0.8,
+							width = 0.45,
+							relative = "editor",
+							opts = {
+								breakindent = true,
+								cursorcolumn = false,
+								cursorline = false,
+								foldcolumn = "0",
+								linebreak = true,
+								list = false,
+								numberwidth = 1,
+								signcolumn = "no",
+								spell = false,
+								wrap = true,
+							},
+						},
 					},
 				},
 				strategies = {

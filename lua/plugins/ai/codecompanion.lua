@@ -7,6 +7,11 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 			{ "franco-ruggeri/codecompanion-spinner.nvim" },
 			{ "ravitemer/mcphub.nvim" },
+			{
+				"MeanderingProgrammer/render-markdown.nvim", -- Enhanced markdown rendering
+				dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+				ft = { "markdown", "codecompanion" },
+			},
 		},
 		priority = 0,
 		config = function()
@@ -54,9 +59,9 @@ return {
 						window = {
 							layout = "vertical", -- float|vertical|horizontal|buffer
 							position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
-							border = "single",
+							border = "thin",
 							height = 0.8,
-							width = 0.45,
+							width = 0.3,
 							relative = "editor",
 							opts = {
 								breakindent = true,

@@ -41,8 +41,8 @@ return {
 			require("mason-lspconfig").setup(opts)
 		end,
 		opts = {
-			automatic_installation = false,
-			automatic_enable = false,
+			automatic_installation = true,
+			automatic_enable = true,
 		},
 	},
 	{
@@ -55,7 +55,6 @@ return {
 		cmd = { "LSPInfo", "LspInstall", "LspUninstall" },
 		config = function()
 			-- Setup LSP servers
-			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
 
 			-- Setup cmp
@@ -64,13 +63,13 @@ return {
 
 			for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
 				if server ~= "gopls" then
-					lspconfig[server].setup({
+					vim.lsp.config(server, {
 						capabilities = capabilities,
 					})
 				end
 			end
 
-			lspconfig.gopls.setup({
+			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 				settings = {
 					gopls = {
@@ -81,6 +80,10 @@ return {
 					},
 				},
 			})
+
+			for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+				vim.lsp.enable(server)
+			end
 		end,
 	},
 }

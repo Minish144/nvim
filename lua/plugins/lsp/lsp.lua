@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		lazy = false,
 		cmd = "Mason",
 		opts = {
 			max_concurrent_installers = 10,

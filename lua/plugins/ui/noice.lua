@@ -19,27 +19,10 @@ return {
 						["vim.lsp.handlers.show_message"] = false,
 					},
 					hover = {
-						enabled = true,
-						opts = {
-							border = {
-								style = "rounded", -- Rounded corners for the hover window
-							},
-							win_options = {
-								winblend = 0, -- Transparency for better visual effect
-							},
-						},
+						enabled = false,
 					},
 					signature = {
-						enabled = true,
-						auto_open = { enabled = false },
-						opts = {
-							border = {
-								style = "rounded",
-							},
-							win_options = {
-								winblend = 0,
-							},
-						},
+						enabled = false,
 					},
 				},
 				presets = {

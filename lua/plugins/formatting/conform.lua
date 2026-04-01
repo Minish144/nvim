@@ -14,6 +14,11 @@ return {
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function(args)
+				-- Remove trailing whitespace
+				local view = vim.fn.winsaveview()
+				vim.cmd([[%s/\s\+$//e]])
+				vim.fn.winrestview(view)
+
 				conform.format({
 					lsp_format = "fallback",
 					bufnr = args.buf,

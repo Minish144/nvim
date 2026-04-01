@@ -3,35 +3,28 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		priority = 100,
+		branch = "main",
 		build = ":TSUpdate",
-		branch = "master",
-		opts = {
-			ensure_installed = {
+		config = function()
+			require("nvim-treesitter").setup()
+
+			require("nvim-treesitter").install({
 				"lua",
 				"go",
 				"json",
 				"bash",
-			},
-			auto_install = false,
-			highlight = {
-				enable = true,
-				disable = function(lang, buf)
+			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
 					local max_filesize = 100 * 1024
-					local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+					local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
 					if ok and stats and stats.size > max_filesize then
-						return true
+						return
 					end
+					pcall(vim.treesitter.start, args.buf)
 				end,
-				additional_vim_regex_highlighting = false,
-			},
-			indent = {
-				enable = false,
-			},
-		},
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-			local ts_install = require("nvim-treesitter.install")
-			ts_install.prefer_git = false
+			})
 		end,
 	},
 	{
